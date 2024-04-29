@@ -2,10 +2,11 @@
 ## An extension for namespaced controllers
 
 Namespacing is a common pattern in rails, however...
+
 Rails does not account for namespacing when looking for helpers on controllers
-  - eg. for Admin::TasksController
-    - helpers are declared 'admin_tasks_url' 
-    - however rails bolierplate expects 'tasks_url' to be available
+  - Eg. for `Admin::TasksController`
+    - helpers are declared `admin_tasks_url` 
+    - however rails bolierplate expects `tasks_url` to be available
 
 This gem dynamically creates aliases for these methods so that nothing needs to be reconfigured
 
@@ -17,7 +18,7 @@ To use:
 
 Like this:
 ```
-# controllers/application_controller.rb
+# in controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   extend RailsNamespacePathHelper
   
@@ -25,7 +26,7 @@ class ApplicationController < ActionController::Base
 
 end
 
-# controllers/admin/tasks_controller.rb
+# in controllers/admin/tasks_controller.rb
 class Admin::TasksController < ApplicationController
   has_namespaced_paths
 
