@@ -12,20 +12,13 @@ This gem dynamically creates aliases for these methods so that nothing needs to 
 
 ### Usage
 
-To use:
-  - add `extend RailsNamespacePathHelper` to the top of ApplicationController
-  - then call `has_namespaced_paths` at the top of each controller with a namespace
+To use simply call:
+  - `has_namespaced_paths` at the top of each controller with a namespace
+  - or `has_namespaced_path_plural` / `has_namespaced_path_singular` for only plural/singular paths
+
 
 Like this:
 ```
-# in controllers/application_controller.rb
-class ApplicationController < ActionController::Base
-  extend RailsNamespacePathHelper
-  
-  ...
-
-end
-
 # in controllers/admin/tasks_controller.rb
 class Admin::TasksController < ApplicationController
   has_namespaced_paths
@@ -47,7 +40,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ### Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails_namespace_path_helper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/BenenB/rails_namespace_path_helper.
 
 ### License
 

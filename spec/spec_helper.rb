@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
+ENV['RAILS_ENV'] ||= 'test'
+
 require "rails_namespace_path_helper"
+require "bundler"
+
+Bundler.require :default,:development
+
+Combustion.initialize! :action_controller
+
+require "rspec/rails"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
