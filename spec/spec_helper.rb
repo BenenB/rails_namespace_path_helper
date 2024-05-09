@@ -2,7 +2,6 @@
 
 ENV['RAILS_ENV'] ||= 'test'
 
-require "rails_namespace_path_helper"
 require "bundler"
 
 Bundler.require :default,:development
@@ -10,6 +9,8 @@ Bundler.require :default,:development
 Combustion.initialize! :action_controller
 
 require "rspec/rails"
+
+require "rails_namespace_path_helper"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

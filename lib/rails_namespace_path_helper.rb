@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-
 require_relative "rails_namespace_path_helper/version"
+require_relative "rails_namespace_path_helper/railtie"
 
 module RailsNamespacePathHelper
 
@@ -10,6 +10,7 @@ module RailsNamespacePathHelper
   # These helpers are declared locally on the controller to avoid conflicts 
 
   def has_namespaced_paths
+
     has_namespaced_path_singular
     has_namespaced_path_plural
   end
@@ -53,9 +54,9 @@ module RailsNamespacePathHelper
 
   def ensure_methods_available namespaces,helper
     # false if helper is not defined
-    self.new.respond_to?("#{namespaces}_#{helper}".to_sym) && 
-    # false if alias is already defined 
-    !self.new.respond_to?("#{helper}".to_sym)
+    self.new.respond_to?("#{namespaces}_#{helper}".to_sym) &&  
+    # false if alias is already defined AND can resolve properly
+    !(self.new.respond_to?("#{helper}".to_sym) && (self.new.send(helper) rescue false))
   end
 
   def define_namespace_helpers namespaces,helper
