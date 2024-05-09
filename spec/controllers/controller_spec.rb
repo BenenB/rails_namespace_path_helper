@@ -48,6 +48,12 @@ RSpec.describe RailsNamespacePathHelper::Railtie do
       expect(instance.static_test_url).to eq('static_test_url')
       expect{instance.test_url}.to raise_error(NoMethodError)
     end
+
+    it "declares paths for nested namespaces" do
+      instance = Admin::Static::TestController.new
+      expect(instance.admin_static_test_url).to eq('admin_static_test_url')
+      expect(instance.test_url).to eq('admin_static_test_url')
+    end
   end
 
 
