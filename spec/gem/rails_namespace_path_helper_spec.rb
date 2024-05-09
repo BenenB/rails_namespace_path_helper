@@ -85,5 +85,35 @@ RSpec.describe RailsNamespacePathHelper do
       expect(instance.tests_path).to eq 'c_tests_path'
 
     end
+
+    it "aliases are present but raise errors" do
+      class D
+        class TestController
+          extend RailsNamespacePathHelper
+          def d_test_url; return 'd_test_url'; end
+          def d_tests_url; return 'd_tests_url'; end
+          def d_test_path; return 'd_test_path'; end
+          def d_tests_path; return 'd_tests_path'; end
+
+          def test_url; raise StandardError; end
+          def tests_url; raise StandardError; end
+
+          def test_path; raise StandardError; end
+          def tests_path; raise StandardError; end
+
+          has_namespaced_paths
+        end
+      end
+
+      instance = D::TestController.new
+
+      expect(instance.test_url).to eq 'd_test_url'
+      expect(instance.tests_url).to eq 'd_tests_url'
+
+      expect(instance.test_path).to eq 'd_test_path'
+      expect(instance.tests_path).to eq 'd_tests_path'
+
+    end
+
   end
 end
