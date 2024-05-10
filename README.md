@@ -31,16 +31,16 @@ end
 
 Install the gem and add to the application's Gemfile by executing:
 
-  $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+  `$ bundle add rails_namespace_path_helper` 
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-  $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+  `$ gem install rails_namespace_path_helper` 
 
 
 ### Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/BenenB/rails_namespace_path_helper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/benenb/rails_namespace_path_helper.
 
 ### License
 

@@ -9,11 +9,9 @@ Gem::Specification.new do |spec|
   spec.email = ["benenbruen@gmail.com"]
 
   spec.summary = "An extension for namespaced controllers in Rails"
-  spec.homepage = "https://github.com/BenenB/rails_namespace_path_helper"
+  spec.homepage = "https://github.com/benenb/rails_namespace_path_helper"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -31,6 +29,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-rails"
+  spec.add_development_dependency "combustion"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
