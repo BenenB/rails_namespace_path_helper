@@ -7,3 +7,10 @@ gemspec
 
 gem "rake", "~> 13.0"
 
+group :test,:development do
+  gem "rspec", "~> 3.0"
+  gem "rails"
+  gem "rspec-rails"
+  gem "actionpack"
+  gem "combustion"
+end
