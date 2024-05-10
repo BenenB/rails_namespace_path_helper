@@ -1,4 +1,5 @@
 ## RailsNamespacePathHelper
+[![Gem Version](https://badge.fury.io/rb/rails_namespace_path_helper.svg)](https://badge.fury.io/rb/rails_namespace_path_helper)
 ## An extension for namespaced controllers
 
 Namespacing is a common pattern in rails, however...
